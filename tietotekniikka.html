@@ -8,6 +8,19 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<!-- Tyylimäärittelyt -->
+<style type="text/css">
+  <!--
+  pre {color: #000000; background-color: #ffffff; font-family: consolas; border:2px solid Black; border-radius: 10px; background: gray;}
+  table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+  .ST0 {font-family: Monospaced; font-weight: bold}
+  .ST1 {font-family: Monospaced; font-weight: bold; font-style: italic}
+  .ST2 {color: #009900; font-family: Monospaced; font-style: italic}
+  .ST3 {font-family: Monospaced; font-style: italic}
+  .literal {color: #0000e6}
+  .string {color: #ce7b00}
+  -->
+</style>
 </head>
 <body>
   
@@ -43,15 +56,20 @@
       </header>
 
       <main role="main">
-
-        <!-- Example row of columns -->
-        <div class="row">
-          <div class="col-lg-12">
-            <h2>Tietotekniikka</h2>
-            <p>Tämä hypertekstisivusto on käytännön esimerkki siitä, miten oppimateriaalia voidaan tehdä monella tavalla. Yhdistämällä Fermat'n 
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+          <h1>Tietotekniikka <small>(ohjelmallinen toteutus)</small></h1>
+            <p class="lead">Tämä hypertekstisivusto on käytännön esimerkki siitä, miten oppimateriaalia voidaan tehdä monella tavalla. Yhdistämällä Fermat'n 
             pisteen opettamisen digitaaliseen ympäristöön voimme parantaa havainnollisuutta, vuorovaikutteisuutta ja moniaistisuutta 
             hauskalla tavalla. Selaamalla sivustoa saat käsityksen, kuinka videota, ääntä, kuvia ja tekstiä yhdistelemällä voidaan 
             saada aikaan mielekäs oppimisympäristö.</p>
+        </div>
+		
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>Lähdekoodi <small>(Java-ohjelmointikielellä)</small></h2>
+              <p class="lead"></p>
           </div>
           <div class="col-lg-12">
             <pre>
@@ -97,8 +115,16 @@
               40 
             </pre>
           </div>
-        </div> 
-
+        
+		  <div class="col-lg-12">
+            <h2>Tuloste <small>(ohjelman tulos)</small></h2>
+              <pre>**PEDA1 – Projektityö**
+              Pienin pituus: 5.554865516955028
+              Pituus: 9.457689438881038
+              Fx: 1.1800000000000008
+              Fy: 1.0000000000000007</pre>
+          </div>
+		</div> 
       </main>
 
       <!-- Site footer -->
