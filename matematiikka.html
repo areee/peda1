@@ -47,21 +47,44 @@
 
         <!-- Jumbotron -->
         <div class="jumbotron">
-          <h1>Matematiikka</h1>
-          <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
-          <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
+          <h1>Matematiikka <small>(todistus)</small></h1>
+            <p class="lead">Jos kolmion ABC sivut kantoina piirretään kolmion ulkopuolelle tasasivuiset kolmiot ARB, BPC ja CQA, niin janat AP, BQ ja CR kulkevat saman pisteen kautta. </p>
+            <p class="lead text-right">(Pierre de Fermat, 1601–65)</p>
         </div>
-        
-        <iframe scrolling="no" title="Fermat'n piste" src="https://www.geogebra.org/material/iframe/id/ZtPpRSWB/width/1260/height/615/border/888888/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false" width="1260px" height="615px" style="border:0px;"> </iframe>
 
         <!-- Sisältö -->
         <div class="row">
-          <div class="col-lg-12">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-          </div>
-        </div> 
+		  <!-- Käsitteenmäärittelyt 1 -->
+		  <div class="col-lg-6">
+		    <h2>Käsitteitä 1</h2>
+          <p><strong>Tasasivuinen kolmio:</strong> kaikki sivut yhtä pitkät, kaikki kulmat 60°</p>
+          <p><strong>Kolmion ympäri piirretty ympyrä:</strong> kolmion kärkien kautta kulkeva ympyrä.</p>
+          <p><strong>Kehäkulmalause:</strong> Samaa kaarta vastaavat kehäkulmat ovat yhtä suuret. (Internetix; Väisälä, s. 85)</p>
+		  </div>
+		  <!-- Käsitteenmäärittelyt 2 -->
+		  <div class="col-lg-6">
+		    <h2>Käsitteitä 2</h2>
+          <p><strong>Supplementtikulmat:</strong> α + β = 180°</p>
+          <p><strong>Lause:</strong> Jos nelikulmion vastakkaiset kulmat ovat supplementtikulmia, niin sen ympäri voidaan piirtää ympyrä. (Väisälä, s. 89)</p>
+          <p><strong>Vieruskulmat:</strong> α + β = 180°</p>
+		  </div>
+		  <div class="col-lg-12">
+        <h2>Todistus</h2>
+          <p class="lead">Voit seurata todistuksen etenemistä alla olevasta GeoGebra-sovelluksesta.</p>
+          <p>Olkoon F janojen BQ ja CR leikkauspiste. Koska kolmiot <em style="color: blue; font-weight: bold;">ARB</em>, <em style="color: magenta; font-weight: bold;">BPC</em> ja <em style="color: green; font-weight: bold;">CQA</em> ovat tasasivuiset, 60&deg; kierto pisteen A ympärille vie R:n B:lle ja C:n Q:lle. Kierto vie siis janan RC janaksi BQ. Tällöin &#x2222;QFC = &#x2222;BFR = 60°.</p>
+          <p>Piirretään ympyrä kolmioiden <em style="color: blue; font-weight: bold;">ARB</em> ja <em style="color: green; font-weight: bold;">CQA</em> ympäri.
+          <p>Koska &#x2222;BAR on kehäkulma ja &#x2222;BAR = &#x2222;BFR saadaan kehäkulmalauseen mukaan, että &#x2222;BFR on kehäkulma ja piste F on tällöin kolmion <em style="color: blue; font-weight: bold;">ARB</em> ympärysympyrällä.</p>
+          <p>Vastaavalla tavalla voidaan myös päätellä, että piste F on kolmion <em style="color: green; font-weight: bold;">CQA</em> ympärysympyrällä. ( Koska &#x2222;CAQ on kehäkulma ja &#x2222;CAQ = &#x2222;CFQ tiedämme kehäkulmalauseen mukaan, että &#x2222;BFR on kehäkulma ja piste F on tällöin kolmion CQA ympärysympyrällä. )</p>
+          <p>Nyt saadaan &#x2222;BFC = 180° − &#x2222;BFR = 180° − 60° = 120°. <small>(vieruskulmat)</small></p>
+          <p>Kulmat &#x2222;BFCja &#x2222;BPC ovat toistensa supplementtikulmia, joten nelikulmion <em style="font-weight: bold;">BPCF</em> ympäri voidaan piirtää ympyrä. Tästä seuraa, että piste F on myös kolmion BPC ympärysympyrällä ja täten &#x2222;BFP = &#x2222;BCP = 60°<small>(samat perustelut kuin ennen).</small></p>
+          <p>Kulmat &#x2222;AFB ja &#x2222;BFP ovat vieruskulmia (120° + 60° = 180°), joten piste F on myös suoralla AP.</p>
+          <p>Piste F on kaikilla janoilla AP, BQ ja CR. </p>
+          <p class="lead"><strong>&there4; F</strong> on janojen leikkauspiste.</p>
+			  <!-- GeoGebra sovellus -->
+			  <h2>GeoGebra <small>(havainnollistus)</small></h2>
+			    <p class="lead">Voit kokeilla ja tarkastella todistusta myös visuaalisesti alla olevan sovelluksen avulla.</p>
+		      <iframe class="col-lg-12 col-md-12 col-sm-12" scrolling="no" title="Fermat'n piste" src="https://www.geogebra.org/material/iframe/id/ZtPpRSWB/width/1260/height/615/border/888888/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false" width="1260px" height="615px" style="border:0px;"> </iframe>
+        </div>
 
       </main>
 
