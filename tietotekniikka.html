@@ -14,6 +14,7 @@
   pre {color: #000000; background-color: #ffffff; font-family: consolas; border:2px solid Black; border-radius: 10px; background: gray;}
   table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
   .ST0 {font-family: Monospaced; font-weight: bold}
+  .comment {color: #969696}
   .ST1 {font-family: Monospaced; font-weight: bold; font-style: italic}
   .ST2 {color: #009900; font-family: Monospaced; font-style: italic}
   .ST3 {font-family: Monospaced; font-style: italic}
@@ -73,46 +74,59 @@
           </div>
           <div class="col-lg-12">
             <pre>
-               1 
-               2 <span class="literal">public</span> <span class="literal">class</span> <span class="ST0">Main</span> {
-               3 
-               4     <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST1">main</span>(String[] args) {
-               5         System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">**PEDA1 – Projektityö**</span><span class="string">&quot;</span>);
-               6 
-               7         <span class="literal">double</span> ax = 0;
-               8         <span class="literal">double</span> ay = 0;
-               9         <span class="literal">double</span> bx = 4;
-              10         <span class="literal">double</span> by = 0;
-              11         <span class="literal">double</span> cx = 1;
-              12         <span class="literal">double</span> cy = 2;
-              13         <span class="literal">double</span> fx = 0;
-              14         <span class="literal">double</span> fy = 0;
-              15         <span class="literal">double</span> pieninPituus = 0;
-              16         <span class="literal">double</span> pituus = 0;
-              17 
-              18         <span class="literal">for</span> (<span class="literal">double</span> x = 0; x &lt; 4; x = x + 0.01) {
-              19             <span class="literal">for</span> (<span class="literal">double</span> y = 0; y &lt; 2; y = y + 0.01) {
-              20 
-              21                 <span class="literal">double</span> pituusA = Math.<span class="ST3">sqrt</span>(Math.<span class="ST3">pow</span>((x - ax), 2) + Math.<span class="ST3">pow</span>((y - ay), 2));
-              22                 <span class="literal">double</span> pituusB = Math.<span class="ST3">sqrt</span>(Math.<span class="ST3">pow</span>((x - bx), 2) + Math.<span class="ST3">pow</span>((y - by), 2));
-              23                 <span class="literal">double</span> pituusC = Math.<span class="ST3">sqrt</span>(Math.<span class="ST3">pow</span>((x - cx), 2) + Math.<span class="ST3">pow</span>((y - cy), 2));
-              24 
-              25                 pituus = pituusA + pituusB + pituusC;
-              26 
-              27                 <span class="literal">if</span> ((x == 0 &amp;&amp; y == 0) || pituus &lt; pieninPituus) {
-              28                     pieninPituus = pituus;
-              29                     fx = x;
-              30                     fy = y;
-              31                 }
-              32             }
-              33         }
-              34         System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">Pienin pituus: </span><span class="string">&quot;</span> + pieninPituus);
-              35         System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">Pituus: </span><span class="string">&quot;</span> + pituus);
-              36         System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">Fx: </span><span class="string">&quot;</span> + fx);
-              37         System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">Fy: </span><span class="string">&quot;</span> + fy);
-              38     }
-              39 }
-              40 
+               1 <span class="comment">/*</span>
+ 	       2 <span class="comment">Ohjelma selvittää yksinkertaisella (mutta erittäin tehottomalla) tavalla kahden desimaalin tarkkuudella pisteen,</span>
+	       3 <span class="comment">jonka etäisyyksien summa mielivaltaisen kolmion kulmista on mahdollisimman pieni.</span>
+  	       4 
+ 	       5 <span class="comment">Toisin sanottuna koodi ratkaisee esimerkinomaisesti yhden eksaktin tapauksen.</span>
+ 	       6 <span class="comment"> */</span>
+ 	       7 <span class="literal">public</span> <span class="literal">class</span> <span class="ST0">Main</span> {
+ 	       8 
+ 	       9     <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST1">main</span>(String[] args) {
+	      10         System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">**PEDA1 – Projektityö**</span><span class="string">&quot;</span>);
+	      11 
+	      12         <span class="comment">//mielivaltaisesti valitut kolmion kulmien kordinaatit</span>
+	      13         <span class="literal">double</span> ax = 0;
+	      14         <span class="literal">double</span> ay = 0;
+	      15         <span class="literal">double</span> bx = 4;
+	      16         <span class="literal">double</span> by = 0;
+	      17         <span class="literal">double</span> cx = 1;
+	      18         <span class="literal">double</span> cy = 2;
+	      19         <span class="comment">//selvitettävä piste</span>
+	      20         <span class="literal">double</span> fx = 0;
+	      21         <span class="literal">double</span> fy = 0;
+	      22         <span class="comment">//vertailua varten tarvittavat muuttujat</span>
+	      23         <span class="literal">double</span> pieninPituus = 0;
+	      24         <span class="literal">double</span> pituus = 0;
+	      25 
+	      26         <span class="comment">//selvitetään piste kahdella sisäkkäisellä luupilla (vrt. kaksiulotteinen taso)</span>
+	      27         <span class="comment">//ulompi luuppi käy läpi kaikki &quot;mielekkäät&quot; x-kordinaatit ja sisempi y-kordinaatit</span>
+	      28         <span class="literal">for</span> (<span class="literal">double</span> x = 0; x &lt; 4; x = x + 0.01) {
+	      29             <span class="literal">for</span> (<span class="literal">double</span> y = 0; y &lt; 2; y = y + 0.01) {
+	      30 
+	      31                 <span class="comment">//tutkittavan pisteen etäisyys mielivaltaisesti valituista kolmion kulmista</span>
+	      32                 <span class="literal">double</span> pituusA = Math.<span class="ST3">sqrt</span>(Math.<span class="ST3">pow</span>((x - ax), 2) + Math.<span class="ST3">pow</span>((y - ay), 2));
+	      33                 <span class="literal">double</span> pituusB = Math.<span class="ST3">sqrt</span>(Math.<span class="ST3">pow</span>((x - bx), 2) + Math.<span class="ST3">pow</span>((y - by), 2));
+	      34                 <span class="literal">double</span> pituusC = Math.<span class="ST3">sqrt</span>(Math.<span class="ST3">pow</span>((x - cx), 2) + Math.<span class="ST3">pow</span>((y - cy), 2));
+	      35 
+	      36                 <span class="comment">//etäisyyksien summa</span>
+	      37                 pituus = pituusA + pituusB + pituusC;
+	      38 
+	      39                 <span class="comment">//jos löytyy aiempaa parempi ratkaisu, otetaan sen arvot talteen</span>
+	      40                 <span class="literal">if</span> ((x == 0 &amp;&amp; y == 0) || pituus &lt; pieninPituus) {
+	      41                     pieninPituus = pituus;
+	      42                     fx = x;
+	      43                     fy = y;
+	      44                 }
+	      45             }
+	      46         }
+	      47         System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">Pienin pituus: </span><span class="string">&quot;</span> + pieninPituus);
+	      48         System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">Pituus: </span><span class="string">&quot;</span> + pituus);
+	      49         System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">Fx: </span><span class="string">&quot;</span> + fx);
+ 	      50         System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">Fy: </span><span class="string">&quot;</span> + fy);
+	      51     }
+	      52 }
+	      53 
             </pre>
           </div>
         
